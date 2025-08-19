@@ -2,9 +2,13 @@ const allCharacter = document.querySelector("#text-input")
 const charCount = document.querySelector("#char-count")
 
 
-allCharacter.addEventListener("input",() =>{
-    charCount.innerText = allCharacter.value.length
-})
+function allcount(){
+    allCharacter.addEventListener("input",()=>{
+        charCount.innerText = allCharacter.value.length
+    })
+}
+
+allcount()
 
 // IF YOU WANT TO SHOW THE WORD COUNT THEN 
 // =============EITHER DO THIS 
