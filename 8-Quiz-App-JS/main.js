@@ -1,60 +1,57 @@
-const questions = [
-    {
-        question: "Which is largest animal in the world?",
-        answers: [
-            { text: "Shark", correct: false },
-            { text: "Blue whale", correct: true },
-            { text: "Element", correct: false },
-            { text: "Giraffe", correct: false },
-        ]
+const questionElement = document.querySelector("#question");
+const answerButtons = document.querySelectorAll(".btn");
+const nextButton = document.querySelector("#next-btn");
 
-    },
-    {
-        question: "Which is smallest continent in the world?",
-        answers: [
-            { text: "Asia", correct: false },
-            { text: "Australia", correct: true },
-            { text: "Arctic", correct: false },
-            { text: "Africa", correct: false },
-        ]
+let currQuestionIndex = 0;
+let score = 0;
 
-    }
-]
 
-const questionElement = document.querySelector("#question")
-const answerButton = document.querySelector("#answer-buttons")
-const nextButton = document.querySelector("#next-btn")
-const btn = document.querySelectorAll(".btn")
-
-// at first we need to init the index
-let currQuestionIndex = 0
-
-// here we create a function and pass the perimeter  for currquestions
 function showQuestion(index) {
-    const currQuestion = questions[index]
-    questionElement.innerText = currQuestion.question
+    const currQuestion = questions[index];
+    questionElement.innerText = currQuestion.question;
 
+    answerButtons.forEach((btn, i) => {
+        const currAnswer = currQuestion.answers[i].text;
+        btn.innerText = currAnswer;
+        btn.dataset.correct = currQuestion.answers[i].correct;
 
-    // this is for showing all the answers in their box
-    btn.forEach((btn, i) => {
-        const currAnswer = currQuestion.answers[i].text
-        btn.innerText = currAnswer
-    })
+        btn.style.backgroundColor = "";
+        btn.style.color = "";
+        btn.disabled = false;
+    });
 }
 
+answerButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        answerButtons.forEach(b => {
+            if (b.dataset.correct === "true") {
+                b.style.backgroundColor = "green";
+                b.style.color = "white";
+
+                if (btn.dataset.correct !== "true") {
+                    btn.style.backgroundColor = "red";
+                    btn.style.color = "white";
+                }
+            }
+        });
+        answerButtons.forEach(b => b.disabled = true);
+
+        nextButton.style.display = "block";
+    });
+});
+
+nextButton.addEventListener("click", () => {
+    currQuestionIndex++
+
+    if (currQuestionIndex < questions.length) {
+        showQuestion(currQuestionIndex);
+    } else {
+        alert("quiz finished")
+        currQuestionIndex = 0
+        showQuestion(currQuestionIndex)
+    }
+})
 
 
-showQuestion(currQuestionIndex)
-
-
-
-
-
-
-
-
-
-
-
-
+showQuestion(currQuestionIndex);
 
