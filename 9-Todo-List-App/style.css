@@ -1,0 +1,97 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for the app */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Todo app styling */
+.todo-app {
+    background-color: #ffffff;
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+/* Title styling */
+#title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/* Input row styling */
+.row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#input-box {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+#input-box:focus {
+    border-color: #4CAF50;
+}
+
+/* Button styling */
+.row button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.row button:hover {
+    background-color: #45a049;
+}
+
+/* List container styling */
+#list-container {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#list-container li {
+    padding: 12px 15px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#list-container li:hover {
+    background-color: #e6f7ff;
+}
+
+/* Checked task styling */
+#list-container li.checked {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #e0e0e0;
+}
