@@ -30,12 +30,14 @@ addButton.addEventListener("click", (addTask)) // we can add make this listner b
                                              //      addTask()
                                             //}) its same 
 
+//  this event listner is for enter button,it will add the task after entering the enter button
 inputBox.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         addTask()
     }
 })
 
+// step-4 make an event listener that delete the task and also mark it as Done
 listContainer.addEventListener("click", (e)=>{
     if(e.target.tagName === "LI"){
         
@@ -48,12 +50,15 @@ listContainer.addEventListener("click", (e)=>{
     }
 })
 
+// step-5 save the data in localstorage
 function saveData() {
     localStorage.setItem("todoList", listContainer.innerHTML);
 }
 
-
+// step-6 show the save data in html after refreshing
 function showTasks() {
     listContainer.innerHTML = localStorage.getItem("todoList");
 }
+
+
 showTasks();
