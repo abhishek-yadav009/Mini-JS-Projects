@@ -76,7 +76,7 @@ function showScore() {
 
 // At the end: Function that will restart your quiz
 // Do not add two actions to your next button with addEventListener
-// It has a high probability to run an infinite loop on one question
+// It has a high probability to run an infinite loop on one question as per my experience
 function restartQuiz() {
     score = 0
     currQuestionIndex = 0
