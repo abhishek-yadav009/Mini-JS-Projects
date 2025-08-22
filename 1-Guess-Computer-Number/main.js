@@ -13,11 +13,28 @@ playButton.addEventListener("click", () => {
     const randomNum = getRandomComputerChoice();
     const userGuess = Number(userChoiceInput.value);
     computerChoice.innerText = randomNum;
+    updateMessage.style.display = "block"
+    playButton.innerText = "Go enter your value"
     if (randomNum === userGuess) {
-        updateMessage.innerText = "Your guess is Correct";
+        updateMessage.innerText = `Your guess is Correct`;
         updateMessage.style.backgroundColor = "green";
+        playButton.style.backgroundColor = "green"
     } else {
-        updateMessage.innerText = "Please try again (0-3)";
+        updateMessage.innerText = `Comp :${randomNum}  Your: ${userGuess}`
         updateMessage.style.backgroundColor = "red";
+        playButton.style.backgroundColor = "red"
     }
+    playButton.disabled= true
+    userChoiceInput.value = ""
 });
+
+userChoiceInput.addEventListener("click",()=>{
+    playButton.disabled = false
+    playButton.innerText = "Check"
+    updateMessage.style.display = "none"
+    playButton.style.backgroundColor = ""
+    computerChoice.innerText = "Comp"
+
+
+})
+
