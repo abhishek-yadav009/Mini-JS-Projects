@@ -7,6 +7,7 @@ const choiceButtons = document.querySelectorAll(".choice");
 const messageDisplay = document.querySelector("#msg");
 const playerScoreDisplay = document.querySelector("#user-score");
 const computerScoreDisplay = document.querySelector("#comp-score");
+const restartBtn = document.querySelector(".restart-btn");
 
 // step 3 create funciton to get random computer choice
 function getRandomComputerChoice() {
@@ -61,3 +62,11 @@ function playRound(playerChoice) {
   playerScoreDisplay.innerText = playerScore;
   computerScoreDisplay.innerText = compScore;
 }
+
+restartBtn.addEventListener("click",()=>{
+  playerScore = 0
+  compScore = 0
+
+  computerScoreDisplay.innerText = compScore
+  playerScoreDisplay.innerText = playerScore
+})
