@@ -3,20 +3,20 @@ const decrease = document.querySelector("#decrease")
 const reset = document.querySelector("#reset")
 const increase = document.querySelector("#increase")
 
-let counter =0
+let counter = 0
 
-increase.addEventListener("click",() => {
+increase.addEventListener("click", () => {
     counter++
     finalCounter.innerText = counter
 
 })
 
-decrease.addEventListener("click",()=>{
+decrease.addEventListener("click", () => {
     counter--
     finalCounter.innerText = counter
 })
 
-reset.addEventListener("click",()=>{
+reset.addEventListener("click", () => {
     counter = 0
     finalCounter.innerText = counter
 })
