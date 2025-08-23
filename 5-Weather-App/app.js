@@ -7,7 +7,6 @@ const wind = document.querySelector(".wind");
 
 // Set a real default city
 let defaultCity = "Lumbini";
-
 async function fetchWeather(cityName) {
     try {
         const response = await fetch(`https://wttr.in/${cityName}?format=j1`);
