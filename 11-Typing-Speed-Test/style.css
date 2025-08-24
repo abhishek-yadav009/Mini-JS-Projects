@@ -1,128 +1,51 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+:root {
+  --bgColor: #333;
+  --textPrimary: #fff;
+  --textSecondary: #666;
+  --primaryColor: #fd4;
 }
 
-/* Background */
 body {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #333;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: var(--bgColor);
+  color: var(--textPrimary);
+  font-size: 1.4rem;
 }
 
-.wrapper {
-  width: 100%;
-  max-width: 700px;
-  padding: 20px;
+main {
+  width: 600px;
+  margin: 50px auto;
 }
 
-/* Card container */
-.container {
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
-  text-align: center;
-  animation: fadeIn 0.5s ease-in-out;
+h1 {
+  color: var(--primaryColor);
+
 }
 
-.container h1 {
-  margin-bottom: 20px;
-  color: #4a4a4a;
-  font-size: 26px;
+h1 svg {
+  width: 40px;
+  fill: var(--primaryColor);
 }
 
-/* Quote box */
-.quote-box {
-  background: #f7f7f7;
-  padding: 20px;
-  border-radius: 12px;
-  min-height: 80px;
-  margin-bottom: 20px;
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: left;
-  color: #444;
-  border: 2px solid #eee;
+#header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-/* Input box */
-textarea {
-  width: 100%;
-  height: 120px;
-  padding: 15px;
-  font-size: 16px;
-  border: 2px solid #ddd;
-  border-radius: 12px;
-  resize: none;
-  outline: none;
-  transition: border 0.3s;
-  margin-bottom: 25px;
+#buttons {
+  text-align: right;
 }
 
-textarea:focus {
-  border: 2px solid #667eea;
-}
-
-/* Stats section */
-.stats {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 25px;
-}
-
-.stat h3 {
-  font-size: 16px;
-  color: #666;
-}
-
-.stat p {
-  font-size: 22px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 5px;
-}
-
-/* Buttons */
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+#info {
+  color: var(--primaryColor);
 }
 
 button {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, .2);
+  border: 0;
+  color: rgba(255, 255, 255, .5);
+  padding: 5px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
 
-#start {
-  background: #667eea;
-  color: white;
-}
-
-#restart {
-  background: #f44336;
-  color: white;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
 }
