@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body, .quote-input {
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            font-weight: 500;
+            background-color: black;
+        }
+        .container {
+            background-color: rgb(20, 20, 19);
+            padding: 1rem;
+            border-radius: .5rem;
+            width: 700px;
+            max-width: 90%;
+        }
+        .timer {
+            position: absolute;
+            top: 2rem;
+            font-size: 3rem;
+            color: rgb(211, 211, 190);
+            font-weight: bold;
+        }
+        .quote-display{
+            margin-bottom: calc(1rem + 2px);
+            margin-left: calc(1rem + 2px);
+        }
+        .quote-input{
+            background-color: transparent;
+            border: 2px solid yellow;
+            outline: none;
+            width: 100%;
+            height: 8rem;
+            margin: auto;
+            resize: none;
+            padding: .5rem 1rem;
+            font-size: 1rem;
+            border-radius: .5rem;
+        }
+        .quote-input:focus{
+            border-color: black;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect{
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer"></div>
+    <div class="container">
+        <div class="quote-display" id="quote-display"></div>
+        <textarea id="quoteInput" class="quote-input" autofocus></textarea>
+    </div>
+    <script src="typing.js"></script>
+</body>
+</html>
